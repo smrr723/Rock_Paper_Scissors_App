@@ -21,6 +21,10 @@ public class RockPaperScissorActivity extends AppCompatActivity {
     private Button rockButton;
     private Button paperButton;
     private Button scissorsButton;
+    private TextView youScore;
+    private TextView computerScore;
+    private Integer yourScore;
+    private Integer computersScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,10 @@ public class RockPaperScissorActivity extends AppCompatActivity {
         paperButton = (Button)findViewById(R.id.paper_button);
         scissorsButton = (Button)findViewById(R.id.scissors_button);
         this.choices = new ArrayList<>();
+        youScore = (TextView)findViewById(R.id.your_score);
+        computerScore = (TextView)findViewById(R.id.computer_score);
+        yourScore = 0;
+        computersScore = 0;
     }
 
     public ArrayList<String> getChoices(){
@@ -59,31 +67,37 @@ public class RockPaperScissorActivity extends AppCompatActivity {
         else if(opponentResult == "Rock" && choice == "Paper"){
             resultText.setText("You win!");
             opponentMove.setText("Rock");
+            yourScore += 1;
             return "You win!";
         }
         else if(opponentResult == "Rock" && choice == "Scissors"){
             resultText.setText("You lose!");
             opponentMove.setText("Rock");
+            computersScore += 1;
             return "You lose!";
         }
         else if(opponentResult == "Paper" && choice == "Scissors"){
             resultText.setText("You win!");
             opponentMove.setText("Paper");
+            yourScore += 1;
             return "You win!";
         }
         else if(opponentResult == "Paper" && choice == "Rock"){
             resultText.setText("You lose!");
             opponentMove.setText("Paper");
+            computersScore += 1;
             return "You lose!";
         }
         else if(opponentResult == "Scissors" && choice == "Paper"){
             resultText.setText("You lose!");
             opponentMove.setText("Scissors");
+            computersScore += 1;
             return "You lose!";
         }
         else if(opponentResult == "Scissors" && choice == "Rock"){
             resultText.setText("You win!");
             opponentMove.setText("Scissors");
+            yourScore += 1;
             return "You win!";
         }
 
@@ -94,19 +108,25 @@ public class RockPaperScissorActivity extends AppCompatActivity {
     public void onPaperButtonClicked(View button) {
         Log.d(getClass().toString(), "onPaperButtonClicked was called");
         play("Paper");
+//        youScore.setText(yourScore);
+//        computerScore.setText(computersScore);
 //        Thread.sleep(4000);
 //        resultText.setText("--");
 //        opponentMove.setText("--");
     }
+
     public void onRockButtonClicked(View button) {
         Log.d(getClass().toString(), "onRockButtonClicked was called");
         play("Rock");
-
+//        youScore.setText(yourScore);
+//        computerScore.setText(computersScore);
     }
+
     public void onScissorsButtonClicked(View button) {
         Log.d(getClass().toString(), "onScissorsButtonClicked was called");
         play("Scissors");
-
+//        youScore.setText(yourScore);
+//        computerScore.setText(computersScore);
     }
 
 }
