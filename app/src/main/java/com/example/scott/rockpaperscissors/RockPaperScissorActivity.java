@@ -52,6 +52,8 @@ public class RockPaperScissorActivity extends AppCompatActivity {
     public String play(String choice) {
         String opponentResult = randChoice();
         if(opponentResult == choice){
+            opponentMove.setText(opponentResult);
+            resultText.setText("Draw!");
             return "Draw!";
         }
         else if(opponentResult == "Rock" && choice == "Paper"){
