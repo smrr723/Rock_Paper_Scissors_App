@@ -100,16 +100,14 @@ public class RockPaperScissorActivity extends AppCompatActivity {
             yourScore += 1;
             return "You win!";
         }
-
         return "Play again?";
-
     }
 
     public void onPaperButtonClicked(View button) {
         Log.d(getClass().toString(), "onPaperButtonClicked was called");
         play("Paper");
-//        youScore.setText(yourScore);
-//        computerScore.setText(computersScore);
+        youScore.setText(yourScore.toString());
+        computerScore.setText(computersScore.toString());
 //        Thread.sleep(4000);
 //        resultText.setText("--");
 //        opponentMove.setText("--");
@@ -118,15 +116,15 @@ public class RockPaperScissorActivity extends AppCompatActivity {
     public void onRockButtonClicked(View button) {
         Log.d(getClass().toString(), "onRockButtonClicked was called");
         play("Rock");
-//        youScore.setText(yourScore);
-//        computerScore.setText(computersScore);
+        youScore.setText(yourScore.toString());
+        computerScore.setText(computersScore.toString());
     }
 
     public void onScissorsButtonClicked(View button) {
         Log.d(getClass().toString(), "onScissorsButtonClicked was called");
         play("Scissors");
-//        youScore.setText(yourScore);
-//        computerScore.setText(computersScore);
+        youScore.setText(yourScore.toString());
+        computerScore.setText(computersScore.toString());
     }
 
 }
